@@ -2,7 +2,7 @@ name: Test Project
 on: push
 jobs:
   test:
-    runs-on: ubunto-latest
+    runs-on: ubunto:latest
     steps:
       - name: Get code
         uses: actions/Checkout@v3
