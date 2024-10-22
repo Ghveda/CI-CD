@@ -22,7 +22,7 @@ jobs:
       - name: Get code
         uses: actions/Checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@4
+        uses: actions/cache@3
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
@@ -41,7 +41,7 @@ jobs:
       - name: Get code
         uses: actions/Checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@4
+        uses: actions/cache@3
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
