@@ -1,5 +1,20 @@
 name: Deploy Project
-on: [push, workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+      - master
+      - "feat/**"
+      - "fix/**"
+    paths-ignore:
+      - '.github/workflows*'
+  pull_request:
+    types:
+      - opened
+    branches:
+      - master
+    paths-ignore:
+      - '.github/workflows*'
 jobs:
   test:
     runs-on: ubuntu-22.04
