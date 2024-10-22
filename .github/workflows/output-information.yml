@@ -1,0 +1,21 @@
+name: Output information
+on: push
+jobs:
+  test-lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Get Repo
+        uses: actions/Checkout@v4
+      - name: Get NodeJs
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install dependecies
+        run: npm ci
+      - name: Run Lint-test
+        run: npm run lint
+      - name: Build code
+        run: npm run build
+      - name: Deploy
+        run: echo "Code is deployed"
+       
