@@ -13,10 +13,11 @@ jobs:
       - name: Install dependecies
         run: npm ci
       # The install should not be here
-      - name: Install eslint
-        run: npm install eslint --save-dev
-      - name: Run Lint-test
-        run: npm run lint
+      #- name: Install eslint
+        #run: npm install eslint --save-dev
+      # Need a config of lint
+      #- name: Run Lint-test
+        #run: npm run lint
       - name: Build code
         run: npm run build
       - name: Deploy
