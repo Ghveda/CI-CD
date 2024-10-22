@@ -1,0 +1,8 @@
+name: Issue workflow
+on: issues
+jobs:
+  github-info:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Print github info
+      run: echo "${{github}}"
