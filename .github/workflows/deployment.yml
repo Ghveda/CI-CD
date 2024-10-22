@@ -18,7 +18,8 @@ on:
       - '.github/workflows*'
 
 env:
-  MONGO_DB_USERNAME: DB_NAME
+  MONGO_DB_USERNAME: ${{ secrets.MONGO_DB_USERNAME }}
+  MONGO_DB_PASSWORD: ${{ secrets.MONGO_DB_PASSWORD }}
   PORT: 4400
   
 jobs:
