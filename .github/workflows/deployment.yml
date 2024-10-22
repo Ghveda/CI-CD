@@ -1,4 +1,5 @@
 name: Deploy Project
+
 on:
   push:
     branches:
@@ -15,6 +16,11 @@ on:
       - master
     paths-ignore:
       - '.github/workflows*'
+
+env:
+  MONGO_DB_USERNAME: DB_NAME
+  PORT: 4400
+  
 jobs:
   test:
     runs-on: ubuntu-22.04
@@ -34,6 +40,9 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+      - name: Print env variable
+        run: echo "Port:" $PORT
+
   build-code:
     needs: test
     runs-on: ubuntu-22.04
@@ -58,6 +67,7 @@ jobs:
         with:
           name: dist-files
           path: dist
+
   deploy:
     needs: build-code
     runs-on: ubuntu-22.04
