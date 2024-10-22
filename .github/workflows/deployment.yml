@@ -22,7 +22,7 @@ jobs:
       - name: Get code
         uses: actions/Checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
@@ -41,7 +41,7 @@ jobs:
       - name: Get code
         uses: actions/Checkout@v4
       - name: Cache dependencies
-        uses: actions/cache@3
+        uses: actions/cache@v4
         with:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
@@ -62,7 +62,7 @@ jobs:
     needs: build-code
     runs-on: ubuntu-22.04
     steps:
-      - name: Dwonload build artifacts
+      - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
           name: dist-files
