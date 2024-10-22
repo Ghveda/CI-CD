@@ -21,6 +21,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/Checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
       - name: Install NodeJs
         uses: actions/setup-node@v4
         with:
@@ -35,6 +40,11 @@ jobs:
     steps:
       - name: Get code
         uses: actions/Checkout@v4
+      - name: Cache dependencies
+        uses: actions/cache@4
+        with:
+          path: ~/.npm
+          key: deps-node-modules-${{ hashFiles('**package-lock.json') }}
       - name: Install NodeJs
         uses: actions/setup-node@v4
         with:
