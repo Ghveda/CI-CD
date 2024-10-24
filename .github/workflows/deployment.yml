@@ -83,7 +83,10 @@ jobs:
           name: dist-files
       - name: Deploy
         run: echo "Deploying"
-    
+
+  reusable_code:
+    uses: ./.github/workflows/reusable.yml
+
   report:
     needs: deploy
     if: failure()
