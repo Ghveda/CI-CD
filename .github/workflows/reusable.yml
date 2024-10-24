@@ -1,0 +1,9 @@
+name: Reusable Workflow
+on: workflow_call
+jobs:
+  reusable_code:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Reusable workflow step 1
+        run: echo "Deploying & Uploading"
+      
